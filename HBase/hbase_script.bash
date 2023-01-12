@@ -1,0 +1,1 @@
+create 'forecasts','airport','weather','date'

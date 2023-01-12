@@ -1,4 +1,4 @@
-INSERT INTO forecasts VALUES
+INSERT INTO forecasts PARTITION(${month}) VALUES
 (${id.0}, 
 ${tstamp},
 ${dt},
