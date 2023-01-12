@@ -2095,7 +2095,7 @@
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
                 <x>2384.0</x>
-                <y>24.0</y>
+                <y>0.0</y>
             </position>
             <height>1000.0</height>
             <label>Load airports to Hive
@@ -2109,11 +2109,28 @@
             <width>632.0</width>
         </labels>
         <labels>
+            <id>4d545d1f-e986-33cc-0000-000000000000</id>
+            <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>968.0</y>
+            </position>
+            <height>200.0</height>
+            <label>Image Files to Hadoop</label>
+            <style>
+                <entry>
+                    <key>font-size</key>
+                    <value>12px</value>
+                </entry>
+            </style>
+            <width>1032.0</width>
+        </labels>
+        <labels>
             <id>cd9631cf-4870-3bd5-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
                 <x>0.0</x>
-                <y>24.0</y>
+                <y>0.0</y>
             </position>
             <height>832.0</height>
             <label>Hive to Hbase
@@ -2130,7 +2147,7 @@
             <id>fa897880-6630-3c9a-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1272.0</x>
+                <x>1264.0</x>
                 <y>0.0</y>
             </position>
             <height>3624.0</height>
@@ -2152,8 +2169,8 @@
             <id>0de9e416-950f-3d57-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1784.0</x>
-                <y>1480.0</y>
+                <x>1744.0</x>
+                <y>1216.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -2458,8 +2475,8 @@
             <id>16317e42-af08-32f7-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>399.2950253886829</x>
-                <y>322.8784951071218</y>
+                <x>400.0</x>
+                <y>256.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -2605,7 +2622,7 @@
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
                 <x>400.0</x>
-                <y>80.0</y>
+                <y>56.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hive-nar</artifact>
@@ -2723,7 +2740,7 @@
                     </entry>
                     <entry>
                         <key>hive-query</key>
-                        <value>select concat(f.tstamp, f.id_airport, f.dt) as id, f.id_airport,f.dt, f.tstamp, f.temp,f.weather_description,f.wind_speed,f.pop,a.name,a.latitude_deg,a.longitude_deg from (SELECT * FROM forecasts WHERE tstamp &gt; (unix_timestamp() - (10 * 60 * 100))) f join airports a on f.id_airport = a.id</value>
+                        <value>select concat(f.tstamp, f.id_airport, f.dt) as id, f.id_airport,f.dt, f.tstamp, f.temp,f.weather_description,f.wind_speed,f.pop,a.name,a.latitude_deg,a.longitude_deg from (SELECT * FROM (SELECT * FROM forecasts WHERE month=from_unixtime(unix_timestamp(), "MM-YYYY")) h WHERE h.tstamp &gt; (unix_timestamp() - (10 * 60 * 100))) f join airports a on f.id_airport = a.id</value>
                     </entry>
                     <entry>
                         <key>hive-post-query</key>
@@ -2795,8 +2812,8 @@
             <id>2d93416f-fe79-3880-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>640.0</x>
-                <y>992.0</y>
+                <x>592.0</x>
+                <y>1008.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hadoop-nar</artifact>
@@ -2997,8 +3014,8 @@
             <id>3011078d-f4e8-3571-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1784.0</x>
-                <y>1304.0</y>
+                <x>1744.0</x>
+                <y>1016.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -3063,8 +3080,8 @@
             <id>33a88819-14f1-3202-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>2440.0</x>
-                <y>856.0</y>
+                <x>2408.0</x>
+                <y>616.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hive-nar</artifact>
@@ -3160,8 +3177,8 @@
             <id>3742d3e8-7ba6-3473-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1792.0</x>
-                <y>3152.0</y>
+                <x>1776.0</x>
+                <y>2944.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -3272,8 +3289,8 @@
             <id>400ace5a-0f75-3039-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1437.976177732433</x>
-                <y>1042.8784951071218</y>
+                <x>1440.0</x>
+                <y>800.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -3656,8 +3673,8 @@
             <id>4b6b2cb4-9155-3292-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1437.976177732433</x>
-                <y>50.87849510712181</y>
+                <x>1432.0</x>
+                <y>32.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hive-nar</artifact>
@@ -3846,8 +3863,8 @@
             <id>7074a543-dff1-34b9-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>2424.0</x>
-                <y>344.0</y>
+                <x>2408.0</x>
+                <y>224.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hadoop-nar</artifact>
@@ -4048,8 +4065,8 @@
             <id>939d3560-c56c-3d6c-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1437.976177732433</x>
-                <y>778.8784951071218</y>
+                <x>1440.0</x>
+                <y>608.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -4270,8 +4287,8 @@
             <id>93cf9307-93c5-31d9-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1437.976177732433</x>
-                <y>266.8784951071218</y>
+                <x>1432.0</x>
+                <y>232.0</y>
             </position>
             <bundle>
                 <artifact>nifi-update-attribute-nar</artifact>
@@ -4366,8 +4383,8 @@
             <id>95a50505-fd98-3c72-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>2440.0</x>
-                <y>600.0</y>
+                <x>2408.0</x>
+                <y>416.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -4478,8 +4495,8 @@
             <id>98f1c374-8e16-3668-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>856.0</x>
-                <y>680.0</y>
+                <x>816.0</x>
+                <y>528.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hbase-nar</artifact>
@@ -4649,8 +4666,8 @@
             <id>9b955147-ef87-3df0-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1792.0</x>
-                <y>2352.0</y>
+                <x>1752.0</x>
+                <y>2184.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -4764,7 +4781,7 @@
                     </entry>
                     <entry>
                         <key>min-bin-size</key>
-                        <value>0 B</value>
+                        <value>100 kB</value>
                     </entry>
                     <entry>
                         <key>max-bin-size</key>
@@ -4805,8 +4822,8 @@
             <id>a34c68fe-e6b3-3b35-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1784.0</x>
-                <y>1648.0</y>
+                <x>1744.0</x>
+                <y>1408.0</y>
             </position>
             <bundle>
                 <artifact>nifi-update-attribute-nar</artifact>
@@ -4902,7 +4919,7 @@
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
                 <x>2408.0</x>
-                <y>48.0</y>
+                <y>24.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -5056,8 +5073,8 @@
             <id>a776afa1-12d1-3611-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1784.0</x>
-                <y>2176.0</y>
+                <x>1752.0</x>
+                <y>1984.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -5130,8 +5147,8 @@
             <id>ac344118-5414-30dc-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1784.0</x>
-                <y>2008.0</y>
+                <x>1744.0</x>
+                <y>1784.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -5260,8 +5277,8 @@
             <id>afb50234-a105-3b94-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>72.0</x>
-                <y>984.0</y>
+                <x>96.0</x>
+                <y>1008.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -5397,7 +5414,7 @@
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
-                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingPeriod>10 min</schedulingPeriod>
                 <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
                 <yieldDuration>1 sec</yieldDuration>
             </config>
@@ -5415,8 +5432,8 @@
             <id>b30698ae-cac4-3b23-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1437.976177732433</x>
-                <y>522.8784951071218</y>
+                <x>1440.0</x>
+                <y>424.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -5509,8 +5526,8 @@
             <id>b49f99a7-1a69-3e16-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1792.0</x>
-                <y>1816.0</y>
+                <x>1744.0</x>
+                <y>1592.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -5603,7 +5620,7 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
                 <x>432.0</x>
-                <y>680.0</y>
+                <y>528.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hbase-nar</artifact>
@@ -5773,8 +5790,8 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <id>e2931b3e-ecc7-3962-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>8.0</x>
-                <y>680.0</y>
+                <x>72.0</x>
+                <y>528.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hbase-nar</artifact>
@@ -5944,8 +5961,8 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <id>e6077659-cd5f-3beb-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1296.0</x>
-                <y>1280.0</y>
+                <x>1280.0</x>
+                <y>1016.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -6062,7 +6079,7 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
                 <x>1784.0</x>
-                <y>3384.0</y>
+                <y>3128.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hive-nar</artifact>
@@ -6158,8 +6175,8 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <id>f48486b7-8b68-3233-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1792.0</x>
-                <y>2952.0</y>
+                <x>1776.0</x>
+                <y>2752.0</y>
             </position>
             <bundle>
                 <artifact>nifi-hadoop-nar</artifact>
@@ -6360,8 +6377,8 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <id>f4ef2a4d-23be-39d8-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1784.0</x>
-                <y>2736.0</y>
+                <x>1768.0</x>
+                <y>2560.0</y>
             </position>
             <bundle>
                 <artifact>nifi-update-attribute-nar</artifact>
@@ -6446,8 +6463,8 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <id>f5c115ca-e933-37fe-0000-000000000000</id>
             <parentGroupId>76308bef-dae4-3b37-0000-000000000000</parentGroupId>
             <position>
-                <x>1792.0</x>
-                <y>2552.0</y>
+                <x>1760.0</x>
+                <y>2368.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -6599,5 +6616,5 @@ wind_deg, wind_gust, vis, snow3h, rain3h, pop, pod, month</value>
             <type>org.apache.nifi.processors.standard.MergeRecord</type>
         </processors>
     </snippet>
-    <timestamp>01/12/2023 17:45:41 UTC</timestamp>
+    <timestamp>01/12/2023 19:52:50 UTC</timestamp>
 </template>
